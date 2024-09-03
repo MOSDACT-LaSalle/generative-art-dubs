@@ -24,6 +24,7 @@ float seconds=0;
 float bgColor;
 float satStart=40;
 float bnessStart=80;
+float counter=0;
 
 
 
@@ -57,7 +58,7 @@ void draw(){
   float bness = bnessStart + map(mouseY, 0, height, -80,20); //changes for the brightness of the bg
   bgColor=seconds; //changes for the hue of the bg
   noStroke(); //no stroke for the bg
-  fill(bgColor,sat,bness,7); //fill with transparency, so motion blur can be appreciated
+  fill(bgColor,sat,bness,8); //fill with transparency, so motion blur can be appreciated
   rect(0,0,width, height); //rectangle that fills all the background
   //noFill(); //nofill for the circle (original code)
   //stroke(295,0,100,100); (part of the original code, defininf the color of the stroke for the circle)
@@ -66,10 +67,11 @@ void draw(){
     c.update();
     c.display();
   }
+  counter++;
 
-  seconds = (frameCount)/30;
+  seconds = (counter)/60;
   //println(seconds); //checking the second counter
-  if (seconds == 360){ //each time the hue gets to 360, it will come back to 0 to restart
-    seconds = 0;
+  if (seconds >= 350){ //each time the hue gets to 360, it will come back to 0 to restart
+    counter = 0;
   }
   }
