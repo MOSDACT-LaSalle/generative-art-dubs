@@ -18,7 +18,7 @@ class Circle {
     size += sizeVar; //the size will change with the sizeVar variable.
     
     // change the direction of sizeVar if boundaries are reached
-    if (size >= width - x || size <= 0) {
+    if (size >= width/random(2,5) || size <= 0) {
       sizeVar = -sizeVar;
     }
   }

@@ -39,12 +39,12 @@ void setup(){
    in the second parameter, can be easily changed, 
    with different sizes and properties*/
    
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < 25; i++) {
     float x = random(width);  // Random X position
     float y = random(height);  // Random Y position
     float size = random(50, 200);  // Random initial size
-    float sizeVar = random(1, 5);  // Random growth rate
-    color strokeColor = color(0, 0, 100,50);  // Random stroke color
+    float sizeVar = random(1, 10);  // Random growth rate
+    color strokeColor = color(0, 0, 100,30);  // fixed stroke color
     
     circles.add(new Circle(x, y, size, sizeVar, strokeColor));
   }
@@ -57,7 +57,7 @@ void draw(){
   float bness = bnessStart + map(mouseY, 0, height, -80,20); //changes for the brightness of the bg
   bgColor=seconds; //changes for the hue of the bg
   noStroke(); //no stroke for the bg
-  fill(bgColor,sat,bness,10); //fill with transparency, so motion blur can be appreciated
+  fill(bgColor,sat,bness,7); //fill with transparency, so motion blur can be appreciated
   rect(0,0,width, height); //rectangle that fills all the background
   //noFill(); //nofill for the circle (original code)
   //stroke(295,0,100,100); (part of the original code, defininf the color of the stroke for the circle)
