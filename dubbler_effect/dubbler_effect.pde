@@ -30,7 +30,7 @@ float counter=0;
 
 void setup(){
   //size(1920,1080);
-  fullScreen(2); //set up so it displays fullscreen on the second monitor, if not available, change value to 1)
+  fullScreen(); //set up so it displays fullscreen on the second monitor, if not available, change value to 1)
   colorMode(HSB,360,100,100,100);
   background(bgColor,satStart,bnessStart);
   noCursor();
